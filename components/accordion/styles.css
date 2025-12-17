@@ -1,0 +1,103 @@
+/**
+ * Accordion Styles
+ *
+ * Estilos base para el componente accordion
+ * TODO: Integrar con design tokens cuando estén disponibles
+ */
+
+.accordion {
+  /* Container */
+  width: 100%;
+  border-radius: var(--border-radius-md, 8px);
+  border: 1px solid var(--color-border, #e5e7eb);
+}
+
+.accordion-item {
+  /* Item container */
+  border-bottom: 1px solid var(--color-border, #e5e7eb);
+}
+
+.accordion-item:last-child {
+  border-bottom: none;
+}
+
+.accordion-item--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.accordion-header {
+  /* Header/Trigger */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md, 16px);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-family-base, system-ui);
+  font-size: var(--font-size-md, 16px);
+  font-weight: var(--font-weight-medium, 500);
+  text-align: left;
+  transition: background-color 0.2s ease;
+}
+
+.accordion-header:hover:not(.accordion-header--disabled) {
+  background-color: var(--color-background-hover, #f9fafb);
+}
+
+.accordion-header:focus-visible {
+  outline: 2px solid var(--color-focus, #3b82f6);
+  outline-offset: -2px;
+}
+
+.accordion-header--disabled {
+  cursor: not-allowed;
+}
+
+.accordion-icon {
+  /* Icon indicator */
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s ease;
+}
+
+.accordion-icon--expanded {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  /* Content area */
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+
+.accordion-content--expanded {
+  max-height: 1000px; /* Ajustar según necesidades */
+}
+
+.accordion-content-inner {
+  padding: var(--spacing-md, 16px);
+  padding-top: 0;
+}
+
+/* Accesibilidad */
+.accordion-header:focus {
+  outline: none;
+}
+
+.accordion-header:focus-visible {
+  outline: 2px solid var(--color-focus, #3b82f6);
+}
+
+/* Estados ARIA */
+[aria-expanded="true"] .accordion-icon {
+  transform: rotate(180deg);
+}
+
+[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
