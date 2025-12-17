@@ -1,0 +1,22 @@
+{
+  "name": "ds-simple",
+  "version": "0.1.0",
+  "description": "Sistema de diseño simple y reutilizable",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "echo 'Configure your dev server here'",
+    "build": "echo 'Configure your build process here'",
+    "test": "echo 'Configure your tests here'"
+  },
+  "keywords": [
+    "design-system",
+    "ui",
+    "components",
+    "tokens"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
